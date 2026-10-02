@@ -94,8 +94,8 @@ export default function App() {
 
         {errors.level !== '' && <Text style={styles.error}>{errors.level}</Text>}
 
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText} onPress={submit}>Criar personagem</Text>
+        <TouchableOpacity style={styles.button } onPress={submit}>
+          <Text style={styles.buttonText}>Criar personagem</Text>
         </TouchableOpacity>
 
       </View>
