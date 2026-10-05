@@ -31,6 +31,7 @@ const CreateScreen = (): JSX.Element => {
 
   const showCharacter = (): void => {
     // TRIGGER 3: abrir a rota Character, levando a ficha que acabou de ser criada (sheet).
+    navigation.navigate('Character', {character: sheet})
   };
 
   const submit = (): void => {

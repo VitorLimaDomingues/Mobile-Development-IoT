@@ -14,13 +14,18 @@ import HomeDrawer from './navigation/HomeDrawer';
 // Os imports já estão prontos. A navegação a gente monta em aula, uma peça por vez.
 
 // PEÇA 1 · STACK: crie aqui o navigator do stack
-
+const Stack = createNativeStackNavigator<RootStackParamList>();
 const App = (): JSX.Element => {
   return (
     <NavigationContainer theme={NAV_THEME}>
       <StatusBar style="light" />
-      {/* PEÇA 1 · STACK: troque o Placeholder pelo Stack.Navigator, com uma Stack.Screen por tela */}
-      <Placeholder text="Peça 1: monte o stack no App.tsx" />
+      <Stack.Navigator screenOptions={{
+        headerShown: false
+      }}>
+        <Stack.Screen name='Login' component={LoginScreen}/>
+        <Stack.Screen name='Home' component={HomeDrawer}/>
+        <Stack.Screen name='Character' component={CharacterScreen}/>
+      </Stack.Navigator>
     </NavigationContainer>
   );
 };

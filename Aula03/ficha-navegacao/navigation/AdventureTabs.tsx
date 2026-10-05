@@ -7,11 +7,19 @@ import CreateScreen from '../screens/CreateScreen';
 import RivalsScreen from '../screens/RivalsScreen';
 
 // PEÇA 2 · TABS: crie aqui o navigator das tabs
-
+const Tab = createBottomTabNavigator<TabParamList>()
 const AdventureTabs = (): JSX.Element => {
   return (
-    // PEÇA 2 · TABS: troque o Placeholder pelo Tab.Navigator, com uma Tab.Screen por tab
-    <Placeholder text="Peça 2: monte as tabs em navigation/AdventureTabs.tsx" />
+    <Tab.Navigator screenOptions={{
+      headerShown: false
+    }}>
+      <Tab.Screen name='Create' 
+      component={CreateScreen} 
+      options={{title: 'inicio', tabBarIcon: CreateIcon}}/>
+      <Tab.Screen name='Rivals' 
+      component={RivalsScreen} 
+      options={{title: 'Rivals', tabBarIcon: RivalsIcon}}/>
+    </Tab.Navigator>
   );
 };
 

@@ -24,8 +24,8 @@ const LoginScreen = ({ navigation }: Props): JSX.Element => {
     if (message !== '') {
       return;
     }
-    // TRIGGER 1: entrar no app, abrindo a rota Home.
-    // Depois de entrar, o voltar NÃO pode trazer a pessoa de volta para o login.
+    
+    navigation.navigate('Home')
   };
 
   return (
