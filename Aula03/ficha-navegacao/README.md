@@ -1,4 +1,7 @@
-# Ficha de Personagem com navegação · boilerplate da Aula 7
+# Mobile Development e IoT | Aula 03 - 05/10/2026
+
+
+## Ficha de Personagem com navegação · boilerplate da Aula 7
 
 As telas chegam **prontas**. O que a gente monta em aula é a navegação: três navigators (stack, tabs e drawer) e seis triggers, uma linha cada.
 
