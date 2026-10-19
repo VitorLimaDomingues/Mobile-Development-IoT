@@ -16,6 +16,15 @@ const LoginScreen = ({ navigation }: Props): JSX.Element => {
 
   // PARTE 2c · USEEFFECT: quando a tela abre, buscar o nome salvo e preencher o campo.
   // Roda uma vez só, depois do primeiro desenho da tela.
+  useEffect(() => {
+    const load = async (): Promise<void> => {
+      const saved: string | null = await loadPlayer();
+      if (saved !== null) {
+        setPlayer(saved);
+      }
+    };
+    load();
+  }, []);
 
   const changePlayer = (text: string): void => {
     setPlayer(text);
