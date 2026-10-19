@@ -15,15 +15,22 @@ const RivalsScreen = (): JSX.Element => {
     navigation.navigate('Character', { character: rival });
   };
 
+  const renderRival = ({ item }: ListRenderItemInfo<CharacterSheet>): JSX.Element => {
+    return <RivalRow rival={item} onPress={open} />;
+  }
+
   // PARTE 1 · LISTA: o map desenha os 480 rivais de uma vez, e a View não rola.
   // 1a: embrulhe o map num ScrollView. 1b: troque ScrollView + map por uma FlatList
   return (
     <View style={styles.screen}>
+    
       <Text style={styles.title}>RIVAIS</Text>
       <Text style={styles.counter}>cartões montados: {mountedRows} de {RIVALS.length}</Text>
+      <ScrollView style={styles.screen}>
       {RIVALS.map((rival: CharacterSheet) => (
         <RivalRow key={rival.name} rival={rival} onPress={open} />
       ))}
+      </ScrollView>
     </View>
   );
 };
