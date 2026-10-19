@@ -12,7 +12,7 @@ const Drawer = createDrawerNavigator<DrawerParamList>();
 const HomeDrawer = (): JSX.Element => {
   // PARTE 3 · SAIR: o header do drawer ganha o LeaveButton no canto direito (headerRight em screenOptions)
   return (
-    <Drawer.Navigator>
+    <Drawer.Navigator screenOptions={{ headerRight: () => <LeaveButton /> }}> 
       <Drawer.Screen name="Adventure" component={AdventureTabs} options={{ title: 'Aventura' }} />
       <Drawer.Screen name="Rules" component={RulesScreen} options={{ title: 'Regras' }} />
       <Drawer.Screen name="About" component={AboutScreen} options={{ title: 'Sobre' }} />

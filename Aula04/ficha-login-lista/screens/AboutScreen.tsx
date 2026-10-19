@@ -2,7 +2,7 @@ import { type JSX } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
 // troque pelo seu nome
-const AUTHOR: string = 'Seu nome aqui';
+const AUTHOR: string = 'Vitor de Lima Domingues';
 
 const AboutScreen = (): JSX.Element => {
   return (

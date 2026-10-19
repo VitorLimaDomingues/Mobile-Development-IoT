@@ -34,7 +34,7 @@ const LoginScreen = ({ navigation }: Props): JSX.Element => {
   const enter = async (): Promise<void> => {
     const message: string = validatePlayer(player);
     setError(message);
-    if (message === '') {
+    if (message !== '') {
       return;
     }
     await savePlayer(player.trim());
