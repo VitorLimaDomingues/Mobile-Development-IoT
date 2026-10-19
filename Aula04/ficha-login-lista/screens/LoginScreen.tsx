@@ -22,15 +22,15 @@ const LoginScreen = ({ navigation }: Props): JSX.Element => {
     setError('');
   };
 
-  const enter = (): void => {
+  const enter = async (): Promise<void> => {
     const message: string = validatePlayer(player);
     setError(message);
-    if (message !== '') {
+    if (message === '') {
       return;
     }
-    // PARTE 2b: antes de entrar, guardar o nome no celular (savePlayer)
+    await savePlayer(player.trim());
     navigation.replace('Home');
-  };
+  }
 
   return (
     <KeyboardAvoidingView

@@ -26,11 +26,15 @@ const RivalsScreen = (): JSX.Element => {
     
       <Text style={styles.title}>RIVAIS</Text>
       <Text style={styles.counter}>cartões montados: {mountedRows} de {RIVALS.length}</Text>
-      <ScrollView style={styles.screen}>
+      <FlatList 
+      data={RIVALS}
+      keyExtractor={(rival: CharacterSheet) => rival.name}
+      renderItem={renderRival}
+      contentContainerStyle={styles.list}>
       {RIVALS.map((rival: CharacterSheet) => (
         <RivalRow key={rival.name} rival={rival} onPress={open} />
       ))}
-      </ScrollView>
+      </FlatList>
     </View>
   );
 };
